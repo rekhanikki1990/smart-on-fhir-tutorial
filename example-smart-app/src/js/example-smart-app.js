@@ -127,5 +127,11 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
   };
-
+  
+  
+window.extractData = function() {
+    var ret = $.Deferred();
+    FHIR.oauth2.ready(onReady, onError);
+    return ret.promise();
+  };
 })(window);
